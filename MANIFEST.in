@@ -1,0 +1,3 @@
+recursive-include jsonobjects *.py
+include LICENSE
+include README.rst

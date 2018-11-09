@@ -1,0 +1,21 @@
+Metadata-Version: 1.1
+Name: json-objects
+Version: 0.0.1
+Summary: 
+        load json text that can contain values in the form of an object or method. Example of a valid extended json string: '{"myObject": myClass(argument=5),"mymethod":sum([22,33])}"
+        * It is preloaded to recognize built-in functions and classes.
+        * you can register methods or classes to be recognized
+        * When the class is not recognize it returns an Anonymous object ... which can then be applied to a real class by calling 'call' method.    
+    
+Home-page: https://github.com/yoram487/json-objects
+Author: Yoram Abenhaim
+Author-email: yoram487@gmail.com
+License: UNKNOWN
+Description: # json-objects
+        Python module to read python objects from json test 
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 2
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Json
