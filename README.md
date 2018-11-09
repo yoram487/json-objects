@@ -4,6 +4,8 @@ Python module to read python objects from json test
 
 ```python
 
+
+
 from jsonobjects import JsonObjectDecoder
 import json
     
@@ -23,6 +25,9 @@ def AMethod(*args,**kwargs):
     return "I was returned by AMethod"
 
 
+
+
+
 class noFaultJSONEncoder(json.JSONEncoder):
     def default(self, obj):
         return str(obj)
@@ -31,12 +36,18 @@ class noFaultJSONEncoder(json.JSONEncoder):
 if __name__ == '__main__':
     
     JsonObjectDecoder.learnObj(AClass,AMethod)
+    
+    #You can skip using learnObj by using the decorator make_decodable
+    @JsonObjectDecoder.make_decodable
+    def AMethod2(*args,**kwargs):
+        return "I was returned by AMethod2"
    
     
     test_json_string="""
     {
         "ClassObject_1": AClass(55,msg="We will create a AClass"),
-        "MethodResult_q": AMethod(),
+        "MethodResult_1": AMethod(),
+        "MethodResult_2": AMethod2(),
         "ANonymous": UnknowClassYet(msg="Hello"),
         "BuiltiN": dict(a="a",b="b"),
         "LikeUsual":{"55":55}
@@ -96,5 +107,13 @@ if __name__ == '__main__':
     
     #Prints
     #OrderedDict([('a', u'a'), ('b', u'b')])
+    
+    
+    
+    
+    
+
+
+
 
 ```
